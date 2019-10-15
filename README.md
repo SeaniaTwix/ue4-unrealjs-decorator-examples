@@ -38,6 +38,7 @@ import { UCLASS, ENTRY } from 'ue4'
 @ENTRY()
 class Program { // set name feel free
   static main() { // *must* follow this name
+    @UCLASS()
     class MyActor extends StaticMeshActor {
       
     }
