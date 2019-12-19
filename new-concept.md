@@ -24,12 +24,16 @@ class Program {
 
 ### with Type specifier
 ```ts
+import { ENTRY, Type } from 'ue4'
+import { UCLASS } from 'ue4/classes'
+import { UPROPERTY, EditAnywhere } from 'ue4/properties'
+
 @ENTRY()
 class Program {
   static main() {
     @UCLASS()
     class MyUObject extends UObject {
-      @EditAnywhere()
+      @UPROPERTY(EditAnywhere)
       @Type('string')
       prop: string = 'Good'
     }
@@ -62,9 +66,6 @@ class MyActor extends Actor {
 
 ```js
 class MyActor extends Actor {
-  // overriding existing event
-  // function signature is not needed for overriding; 
-  // because we already know it!
   ReceiveBeginPlay() {
     super.ReceiveBeginPlay()
     console.log("Hello")
